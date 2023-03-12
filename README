@@ -1,0 +1,41 @@
+* ELEC_ENG 202-0
+* Final Exam
+* Eliseu Antonio Kloster Filho
+
+* General Notes:
+- I tested this code with Python 3.8.10 and gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
+in a Linux Ubuntu Environment.
+- For Python, numpy and matplotlib are required. I specifically tested numpy version
+1.23.5 and matplotlib  version 3.5.1.
+- For C, I am compiling C89 (not C99). I think there would be no problem in compiling
+the code with C99, but the code I wrote is C89 compliant and the bash scripts that I
+wrote have the -ansi flag enabled when compiling with gcc.
+- I didn't test all command line options for final.py, except those used in the
+bash scripts. I didn't protect them against unallowed combinations of arguments because I
+assumed only I would be using this functionality.
+- There are a few printf statements commented out in the C code, you can uncomment them to
+get a more verbose output.
+
+* How to run the code:
+- Question 1:
+Type "sh run1.sh" in the terminal (without the quotation marks), this will compile the C
+code, run it with the parameters given in final.pdf and then create a directory outputs/ 
+with two output files: data1.csv and data2.csv, corresponding to Part A and Part B of the
+question, respectively. Then, two plots will be generated with Python: plot1.png and plot2.png,
+which correspond to Part A and Part B, respectively. If you run it again, the directory outputs/
+will be deleted, but the plots will not, so when new ones are created, they are named plot3.png
+and plot4.png.
+
+- Question 2:
+Type "sh run2.sh" in the terminal (without the quotation marks), this will compile the C
+code, run it with the parameters given in final.pdf and then create a directory outputs/ 
+with 90 output files, which all have names of the form data_N_i.csv, corresponding to the
+(i+1)th trial with a layer size of N. Then, one plot will be generated with Python: plot3.png
+(if you didn't delete plot1.png and plot2.png from the previous question. Moreover, if you didn't
+delete the directory outputs/ created in the previous question, it will be deleted and created again.
+
+- Python Plotter
+There are a few other options for the python code that can be used if the data was already calculated.
+The default for Question 1a, for example, is "python3 final.py -s -c -d outputs/data1.csv", but you could
+use "python3 final.py -d outputs/data1.csv" to remove the additional caption information and enable lines
+in the plot. You could then double the resolution with "python3 final.py -r 600 -d outputs/data1.csv".
